@@ -38,7 +38,6 @@ Clone the repo.
 git clone https://github.com/stindrago/dart-cli ~/Desktop/dart-cli
 ```
 
-
 ## Demo
 
 ``` shell
