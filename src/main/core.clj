@@ -4,6 +4,10 @@
             [babashka.fs :as fs]
             [babashka.process :refer [process]]))
 
+(def version "0.0.1")
+
+(defn show-version [args] (println version))
+
 (defn create-project
   [params]
   (let [args (:_arguments params)
@@ -17,21 +21,17 @@
           (println "Created default directory:" second
                    "from skeleton:" first)))))
 
-(defn print-args
-  [args]
-  (println args))
-
 (def CONFIGURATION
   {:command "dart"
    :description ["A command line tool 🔨 for the D.A.R.T method to generate a project tree from a skeleton 📂 (template)."
                  "by stindrago <email@stindrago.com>"]
-   :version "0.0.1"
-   :subcommands [{:command "debug"
-                  :description ["Debug."]
-                  :runs print-args}
-                 {:command "new"
+   :version version
+   :subcommands [{:command "new"
                   :description ["Create a new project tree from a skeleton."]
-                  :runs create-project}]})
+                  :runs create-project}
+                 {:command "version"
+                  :description ["Show version details."]
+                  :runs show-version}]})
 
 (defn -main [& args]
   ;; (println (-> (process '[ls]) :out slurp))
