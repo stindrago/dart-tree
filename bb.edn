@@ -3,4 +3,5 @@
         org.babashka/spec.alpha {:git/url "https://github.com/babashka/spec.alpha"
                                  :sha "433b0778e2c32f4bb5d0b48e5a33520bee28b906"}
         cli-matic/cli-matic {:mvn/version "0.5.1"}
-        babashka/fs {:mvn/version "0.1.4"}}}
+        babashka/fs {:mvn/version "0.1.4"}
+        babashka/process {:mvn/version "0.1.1"}}}
