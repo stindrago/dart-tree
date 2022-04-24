@@ -1,31 +1,38 @@
 (ns main.core
   (:require [medley.core :as m]
             [cli-matic.core :refer [run-cmd]]
-            [babashka.fs :as fs]))
+            [babashka.fs :as fs]
+            [babashka.process :refer [process]]))
 
 (defn create-project
-  "Create a project from skeleton."
+  [params]
+  (let [args (:_arguments params)
+        first (first args)
+        second (second args)]
+    (case (count args)
+      1 (do (fs/create-dir first)
+            (println "Created default directory" first))
+      2 (do
+          (fs/copy-tree (str "./skel/" first) second)
+          (println "Created default directory:" second
+                   "from skeleton:" first)))))
+
+(defn print-args
   [args]
-  (case (count (:_arguments args))
-    1 (do (println "Creating default directory:"
-                   (first (:_arguments args)))
-          (fs/create-dir (first (:_arguments args))))
-    2 (println "Creating default directory:" (second (:_arguments args))
-               "from skeleton:" (first (:_arguments args))
-               (fs/copy-tree (str "./" "skel/" (first (:_arguments args)))
-                             (second (:_arguments args))))))
+  (println args))
 
 (def CONFIGURATION
-  {:app         {:command     "dart"
-                 :description ["A command-line tool for the D.A.R.T. method by stindrago <email@stindrago.com>"
-                               ""
-                               "Stop creating the same files and folders over and over again for every new project, automatize the process."
-                               "Looks cool, doesn't it?"]
-                 :version     "0.0.1"}
-   :commands    [{:command     "new"
+  {:command "dart"
+   :description ["A command line tool 🔨 for the D.A.R.T method to generate a project tree from a skeleton 📂 (template)."
+                 "by stindrago <email@stindrago.com>"]
+   :version "0.0.1"
+   :subcommands [{:command "debug"
+                  :description ["Debug."]
+                  :runs print-args}
+                 {:command "new"
                   :description ["Create a new project tree from a skeleton."]
-
-                  :runs        create-project}]})
+                  :runs create-project}]})
 
 (defn -main [& args]
+  ;; (println (-> (process '[ls]) :out slurp))
   (run-cmd *command-line-args* CONFIGURATION))
