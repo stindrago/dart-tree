@@ -5,10 +5,9 @@
             [babashka.process :refer [process]]))
 
 (def version "0.0.2")
+(def skel-dir (str (fs/expand-home "~") "/" ".config/dart-cli/skel"))
 
-(defn show-version [args] (println version))
-
-(defn create-project
+(defn new-project
   [params]
   (let [args (:_arguments params)
         first (first args)
@@ -17,9 +16,11 @@
       1 (do (fs/create-dir first)
             (println "Created default directory" first))
       2 (do
-          (fs/copy-tree (str "./skel/" first) second)
+          (fs/copy-tree (str skel-dir "/" first) second)
           (println "Created default directory:" second
                    "from skeleton:" first)))))
+
+(defn show-version [args] (println version))
 
 (def CONFIGURATION
   {:command "dart"
@@ -28,7 +29,7 @@
    :version version
    :subcommands [{:command "new"
                   :description ["Create a new project tree from a skeleton."]
-                  :runs create-project}
+                  :runs new-project}
                  {:command "version"
                   :description ["Show version details."]
                   :runs show-version}]})
