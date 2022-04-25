@@ -4,7 +4,7 @@
             [babashka.fs :as fs]
             [babashka.process :refer [process]]))
 
-(def version "0.0.1")
+(def version "0.0.2")
 
 (defn show-version [args] (println version))
 
