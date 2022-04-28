@@ -31,9 +31,7 @@ The idea is help you stay organized by providing an easy way to start a project.
 ## Quickstart
 
 ``` shell
-git clone https://github.com/stindrago/dart-cli ~/Desktop/dart-cli
-cd ~/Desktop/dart-cli
-bash install.sh
+bash < <(curl -s https://gitlab.com/stindrago/dart-cli/-/raw/main/install.sh)
 ```
 
 Then your are ready to go
