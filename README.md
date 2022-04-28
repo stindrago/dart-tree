@@ -12,6 +12,16 @@ It is built as an utility software for the [D.A.R.T method][dart-method].
 
 The idea is help you stay organized by providing an easy way to start a project. Whenever you start a new project the structures is more or less the same. Instead of doing this manually you can generate the project tree with **dart-cli**.
 
+## Goals
+
+- [x] Generate projects from skeleton.
+- [x] Display help.
+- [] Manage namespaces (work, private, alter-ego-1...).
+- [] Manage tags.
+- [] Automatic versioning.
+- [] Skeleton marketplace.
+- [] GUI.
+
 ## Prerequisites
 
 - Java
@@ -49,7 +59,7 @@ the-awesome-logo
 
 - In **drawing.svg** build the design with [Inkscape][inkscape].
 - In **RADME.md** add details about the design: tasks, ideas, the delivery process, notes, ecc.
-- In **assets/input** add the images you may use as a reference, the color palets or the fonts.
+- In **assets/input** add the images you may use as a reference, the color palet or the fonts.
 - In **assets/renders** add the logo exports as `.pdf` or `.png`.
 
 ## Customization
