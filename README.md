@@ -16,11 +16,11 @@ The idea is help you stay organized by providing an easy way to start a project.
 
 - [x] Generate projects from skeleton.
 - [x] Display help.
-- [] Manage namespaces (work, private, alter-ego-1...).
-- [] Manage tags.
-- [] Automatic versioning.
-- [] Skeleton marketplace.
-- [] GUI.
+- [ ] Manage namespaces (work, private, alter-ego-1...).
+- [ ] Manage tags.
+- [ ] Automatic versioning.
+- [ ] Skeleton marketplace.
+- [ ] GUI.
 
 ## Prerequisites
 
