@@ -4,16 +4,42 @@
 
 # dart-cli
 
-A command line tool for the [D.A.R.T method][dart-method] to generate a project tree from a skeleton.
+## Introduction
 
-When you create a new project and want to be organized usually the initial directory structures is more or less the same. Have you thought about using a template that generates all those directories and files you need to start working on the project without manually creating them? **dart-cli** is the right tool for you.
+**dart-cli** is command line tool to generate a project tree from a skeleton (template). The project tree is made of files and directories.
 
-## Use Case
+It is built as an utility software for the [D.A.R.T method][dart-method].
 
-For example if I start a new graphic design project called **my-awesome-logo**, to stay organized I need a project structure to start with. 
+The idea is help you stay organized by providing an easy way to start a project. Whenever you start a new project the structures is more or less the same. Instead of doing this manually you can generate the project tree with **dart-cli**.
+
+## Prerequisites
+
+- Java
+- [babashka][babashka-install]
+- git
+
+## Quickstart
+
+``` shell
+git clone https://github.com/stindrago/dart-cli ~/Desktop/dart-cli
+cd ~/Desktop/dart-cli
+bash install.sh
+```
+
+Then your are ready to go
+
+```shell
+dart new book my-awesome-book
+```
+
+## Example
+
+Imagine you are a graphic designer and one of your friends asks you to create a logo for his new website. Before starting to work you think about the required materials: icons, fonts, images, notes, ecc. All these files you gather must be stored in an organized fashion somewhere.
+
+The best thing to do is to start a new project called **the-awesome-logo**, structured like this.
 
 ``` text
-my-awesome-logo
+the-awesome-logo
 ├── drawing.svg
 ├── README.md
 └── assets
@@ -21,33 +47,11 @@ my-awesome-logo
     └── renders
 ```
 
-- In **drawing.svg** is where I build the design with [Inkscape][inkscape].
-- In **RADME.md** is where I add details about my design: what I have to build, what are the needs of the client, notes, ecc.
-- In **assets/input** I put the images that I use as reference or the fonts I want to use.
-- In **assets/renders** I put the bitmap files, for example a PDF draft I want to send to my client for some feedback.
+- In **drawing.svg** build the design with [Inkscape][inkscape].
+- In **RADME.md** add details about the design: tasks, ideas, the delivery process, notes, ecc.
+- In **assets/input** add the images you may use as a reference, the color palets or the fonts.
+- In **assets/renders** add the logo exports as `.pdf` or `.png`.
 
-This is the project tree I need to start a new design project.
+## Customization
 
-## Install
-
-Install Java and [babashka][babashka-install], the Clojure compiler.
-
-Clone the repo.
-
-``` shell
-git clone https://github.com/stindrago/dart-cli ~/Desktop/dart-cli
-```
-
-## Demo
-
-``` shell
-cd ~/Desktop/dart-cli
-bb -m main.core new graphic-design my-awesome-logo
-```
-
-- **bb -m main.core** is the program call. Soon will be packaged as **dart-cli**.
-- **new** is the command that invoke a creation of a new project tree.
-- **graphic-design** is the name of the skeleton (template). Look in the `skel/` directory to find more project skeletons.
-- **my-awesome-logo** is the name of your project. All the files will be placed inside a directory by the same name.
-
-See `bb -m main.core --help` for details.
+All skeletons are stored in `~/.confic/dart-cli/skel`. You can create a custom skeleton by creating a new project similar to the [example](#example).
