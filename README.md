@@ -34,7 +34,7 @@ The idea is help you stay organized by providing an easy way to start a project.
 bash < <(curl -s https://gitlab.com/stindrago/dart-cli/-/raw/main/install.sh)
 ```
 
-Then your are ready to go
+Then your are ready to run
 
 ```shell
 dart new book my-awesome-book
