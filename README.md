@@ -62,4 +62,4 @@ the-awesome-logo
 
 ## Customization
 
-All skeletons are stored in `~/.confic/dart-cli/skel`. You can create a custom skeleton by creating a new project similar to the [example](#example).
+All skeletons are stored in `~/.config/dart-cli/skel`. You can create a custom skeleton by creating a new project similar to the [example](#example).
