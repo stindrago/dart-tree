@@ -10,7 +10,23 @@ SKEL_DIR="./resources/skel"
 CONFIG_DIR="$HOME/.config/dart-cli"
 DOWNLOAD_URL="https://gitlab.com/stindrago/dart-cli/-/archive/v${VERSION}/dart-cli-v${VERSION}.tar.gz"
 DOWNLOAD_DIR=""
+BASHRC_PATH=""
 CURRENT_DIR=$(pwd)
+
+case $SHELL in
+    /bin/bash)
+        BASHRC_PATH="$HOME/.bashrc"
+        ;;
+
+    /bin/zsh)
+        BASHRC_PATH="$HOME/.zshrc"
+        ;;
+    *)
+        exit
+        ;;
+esac
+
+echo "$BASHRC_PATH"
 
 # Delete temp working directory
 function cleanup {
@@ -69,7 +85,7 @@ fi
 
 cp -rv $SKEL_DIR $CONFIG_DIR
 echo "Creating 'dart' alias..."
-echo "alias dart-cli='java -jar ${INSTALL_DIR}/dart-cli.jar'" >> "${HOME}/.bashrc"
+echo "alias dt='java -jar ${INSTALL_DIR}/dart-cli.jar'" >> $BASHRC_PATH
 echo
 echo "Successfully installed 'dart-cli' in $INSTALL_DIR".
 echo "Reload your '.bashrc'. Run 'source ${HOME}/.bashrc' in your terminal."
