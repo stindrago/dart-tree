@@ -5,6 +5,7 @@ set -e
 VERSION=$(curl -sL "https://gitlab.com/stindrago/dart-cli/-/raw/main/VERSION")
 DEFAULT_INSTALL_DIR="/usr/local/bin"
 INSTALL_DIR="$DEFAULT_INSTALL_DIR"
+EXECUTABLE="./target/uberjar/dart-cli-${VERSION}-standalone.jar"
 SKEL_DIR="./resources/skel"
 CONFIG_DIR="$HOME/.config/dart-cli"
 DOWNLOAD_URL="https://gitlab.com/stindrago/dart-cli/-/archive/v${VERSION}/dart-cli-v${VERSION}.tar.gz"
@@ -35,7 +36,8 @@ function is_command_installed {
 # Check required programs
 echo "Checking if required programms are installed..."
 is_command_installed java
-is_command_installed bb
+is_command_installed clojure
+is_command_installed lein
 
 # Create a temp working directory
 if [[ -z "$DOWNLOAD_DIR" ]]; then
@@ -56,18 +58,18 @@ curl -O $DOWNLOAD_URL
 tar xvf dart-cli-v${VERSION}.tar.gz
 cd dart-cli-v${VERSION}
 echo "Creating executable..."
-bb uberjar dart-cli.jar -m main.core
+lein uberjar
 
 echo "Coping executable to '$INSTALL_DIR'..."
-if ! cp -rv "dart-cli.jar" $INSTALL_DIR &> /dev/null
+if ! cp -rv $EXECUTABLE $INSTALL_DIR
 then
     echo "Writing permissions are required to copy the executable to '$INSTALL_DIR', try again..."
-    sudo cp -rv "dart-cli.jar" $INSTALL_DIR
+    sudo cp -rv $EXECUTABLE $INSTALL_DIR
 fi
 
 cp -rv $SKEL_DIR $CONFIG_DIR
 echo "Creating 'dart' alias..."
-echo "alias dart='bb ${INSTALL_DIR}/dart-cli.jar'" >> "${HOME}/.bashrc"
+echo "alias dart='java -jar ${INSTALL_DIR}/dart-cli.jar'" >> "${HOME}/.bashrc"
 echo
 echo "Successfully installed 'dart-cli' in $INSTALL_DIR".
 echo "Reload your '.bashrc'. Run 'source ${HOME}/.bashrc' in your terminal."
