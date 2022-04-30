@@ -1,4 +1,4 @@
-image: openjdk:11
+image: leiningen:jdk11-2.9.4-mp
 
 stages: # List of stages for jobs, and their order of execution
   - prepare
@@ -12,10 +12,7 @@ prepare_job:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH # Run this job when commits are pushed or merged to the default branch
   script:
     - echo "Downloading required programs..."
-    - java -version
-    - echo $JAVA_HOME
-    - bash < <(curl -s https://raw.githubusercontent.com/babashka/babashka/master/install)
-    - bb uberjar dart-cli.jar -m main.core
+    - lein uberjar
     - echo "PRE_JOB_ID=$CI_JOB_ID" >> variables.env
     - echo "TAG=v$(cat VERSION)" >> variables.env # append to the variables.env file
     - echo "Build complete."
@@ -23,7 +20,7 @@ prepare_job:
     reports:
       dotenv: variables.env # Use artifacts:reports:dotenv to expose the variables to other jobs
     paths:
-      - dart-cli.jar
+      - target/uberjar/dart-cli-${TAG}-SNAPSHOT-standalone.jar
 
 release_job:
   stage: release

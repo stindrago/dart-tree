@@ -4,7 +4,7 @@
 
 # dart-cli
 
-![](./demo.png)
+![](./resources/repo/demo.png)
 
 ## Introduction
 
@@ -18,6 +18,7 @@ The idea is to help you stay organized by providing an easy way to start a proje
 
 - [x] Generate projects from skeleton.
 - [x] Display help.
+- [ ] List skeletons.
 - [ ] Manage namespaces (work, private, alter-ego-1...).
 - [ ] Manage tags.
 - [ ] Automatic versioning.
@@ -27,8 +28,6 @@ The idea is to help you stay organized by providing an easy way to start a proje
 ## Prerequisites
 
 - Java
-- [babashka][babashka-install]
-- git
 
 ## Quickstart
 
