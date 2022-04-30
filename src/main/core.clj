@@ -1,10 +1,10 @@
 (ns main.core
-  (:require [medley.core :as m]
-            [cli-matic.core :refer [run-cmd]]
+  (:require [cli-matic.core :refer [run-cmd]]
             [babashka.fs :as fs]
-            [babashka.process :refer [process]]))
+            [nano-id.core :refer [nano-id]])
+  (:gen-class))
 
-(def version "0.0.2")
+(def version "0.1.0")
 (def skel-dir (str (fs/expand-home "~") "/" ".config/dart-cli/skel"))
 
 (defn new-project
@@ -34,6 +34,6 @@
                   :description ["Show version details."]
                   :runs show-version}]})
 
-(defn -main [& args]
-  ;; (println (-> (process '[ls]) :out slurp))
+(defn -main
+  [& args]
   (run-cmd *command-line-args* CONFIGURATION))

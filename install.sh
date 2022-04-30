@@ -5,6 +5,7 @@ set -e
 VERSION=$(curl -sL "https://gitlab.com/stindrago/dart-cli/-/raw/main/VERSION")
 DEFAULT_INSTALL_DIR="/usr/local/bin"
 INSTALL_DIR="$DEFAULT_INSTALL_DIR"
+SKEL_DIR="./resources/skel"
 CONFIG_DIR="$HOME/.config/dart-cli"
 DOWNLOAD_URL="https://gitlab.com/stindrago/dart-cli/-/archive/v${VERSION}/dart-cli-v${VERSION}.tar.gz"
 DOWNLOAD_DIR=""
@@ -64,7 +65,7 @@ then
     sudo cp -rv "dart-cli.jar" $INSTALL_DIR
 fi
 
-cp -rv "./skel" $CONFIG_DIR
+cp -rv $SKEL_DIR $CONFIG_DIR
 echo "Creating 'dart' alias..."
 echo "alias dart='bb ${INSTALL_DIR}/dart-cli.jar'" >> "${HOME}/.bashrc"
 echo
