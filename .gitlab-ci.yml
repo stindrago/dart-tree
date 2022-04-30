@@ -1,4 +1,4 @@
-image: leiningen:jdk11-2.9.4-mp
+image: ardoq/leiningen:jdk11-2.9.4-mp
 
 stages: # List of stages for jobs, and their order of execution
   - prepare
