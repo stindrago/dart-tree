@@ -61,15 +61,15 @@ echo "Creating executable..."
 lein uberjar
 
 echo "Coping executable to '$INSTALL_DIR'..."
-if ! cp -rv $EXECUTABLE $INSTALL_DIR
+if ! cp -rv $EXECUTABLE $INSTALL_DIR/dart-cli.jar
 then
     echo "Writing permissions are required to copy the executable to '$INSTALL_DIR', try again..."
-    sudo cp -rv $EXECUTABLE $INSTALL_DIR
+    sudo cp -rv $EXECUTABLE $INSTALL_DIR/dart-cli.jar
 fi
 
 cp -rv $SKEL_DIR $CONFIG_DIR
 echo "Creating 'dart' alias..."
-echo "alias dart='java -jar ${INSTALL_DIR}/dart-cli.jar'" >> "${HOME}/.bashrc"
+echo "alias dart-cli='java -jar ${INSTALL_DIR}/dart-cli.jar'" >> "${HOME}/.bashrc"
 echo
 echo "Successfully installed 'dart-cli' in $INSTALL_DIR".
 echo "Reload your '.bashrc'. Run 'source ${HOME}/.bashrc' in your terminal."
