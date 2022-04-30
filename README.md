@@ -59,7 +59,7 @@ bash < <(curl -s https://gitlab.com/stindrago/dart-cli/-/raw/main/install.sh)
 Then you are ready to run
 
 ```shell
-dart new book my-awesome-book
+dart-cli new book my-awesome-book
 ```
 
 ## Example
