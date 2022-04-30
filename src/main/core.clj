@@ -4,7 +4,7 @@
             [nano-id.core :refer [nano-id]])
   (:gen-class))
 
-(def version "0.1.0")
+(def version "0.1.1")
 (def skel-dir (str (fs/expand-home "~") "/" ".config/dart-cli/skel"))
 
 (defn new-project
