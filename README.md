@@ -1,6 +1,9 @@
 [dart-method]: https://stindrago.com/blog/#
 [inkscape]: https://inkscape.org
-[babashka-install]: https://github.com/babashka/babashka#installation
+[java]: https://www.java.com
+[clojure]: https://clojure.org
+[leiningen]: https://leiningen.org
+[releases]: https://gitlab.com/stindrago/dart-cli/-/releases
 
 # dart-cli
 
@@ -27,15 +30,33 @@ The idea is to help you stay organized by providing an easy way to start a proje
 
 ## Prerequisites
 
-- Java
+- [Java][java] 11+
+- [Clojure][clojure] 1.11+
+- [Leiningen][leiningen] 2.9.8+
+
+Linux
+
+```shell
+sudo apt install openjdk-11-jre-headless clojure leiningen
+```
+
+MacOS
+
+```shell
+brew install openjdk@11
+brew install clojure
+brew install leiningen
+```
 
 ## Quickstart
+
+Check [prerequisites](#Prerequisites) first.
 
 ``` shell
 bash < <(curl -s https://gitlab.com/stindrago/dart-cli/-/raw/main/install.sh)
 ```
 
-Then your are ready to run
+Then you are ready to run
 
 ```shell
 dart new book my-awesome-book
