@@ -22,7 +22,7 @@ prepare_job:
     reports:
       dotenv: variables.env # Use artifacts:reports:dotenv to expose the variables to other jobs
     paths:
-      - /builds/stindrago/dart-cli/target/uberjar/dart-cli.jar
+      - /builds/stindrago/dart-cli/dart-cli.jar
 
 release_job:
   stage: release
