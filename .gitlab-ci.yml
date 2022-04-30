@@ -13,6 +13,7 @@ prepare_job:
   script:
     - echo "Downloading required programs..."
     - lein uberjar
+    - VERSION=$(cat VERSION)
     - echo "PRE_JOB_ID=$CI_JOB_ID" >> variables.env
     - echo "TAG=v$(cat VERSION)" >> variables.env # append to the variables.env file
     - echo "Build complete."
@@ -20,7 +21,7 @@ prepare_job:
     reports:
       dotenv: variables.env # Use artifacts:reports:dotenv to expose the variables to other jobs
     paths:
-      - /builds/stindrago/dart-cli/target/uberjar/dart-cli-${TAG}-standalone.jar
+      - /builds/stindrago/dart-cli/target/uberjar/dart-cli-${VERSION}-standalone.jar
 
 release_job:
   stage: release
