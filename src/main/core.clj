@@ -1,7 +1,10 @@
 (ns main.core
   (:require [cli-matic.core :refer [run-cmd]]
             [babashka.fs :as fs]
-            [nano-id.core :refer [nano-id]])
+            [nano-id.core :refer [nano-id]]
+            [main.tree :as t]
+            [clojure.java.shell :refer [sh]])
+
   (:gen-class))
 
 (def version "0.1.1")
@@ -19,6 +22,14 @@
           (fs/copy-tree (str skel-dir "/" first) second)
           (println "Created default directory:" second
                    "from skeleton:" first)))))
+
+(defn list-skel
+  [args]
+  (if (= 0 (count (:_arguments args)))
+    (do
+      (println "Available skeletons:")
+      (run! #(println "-" %) (map fs/file-name (map str (fs/list-dir skel-dir)))))
+    (t/pprint-ftree (t/popu-list (str skel-dir "/" (first (:_arguments args)))))))
 
 (defn show-version [args] (println version))
 
