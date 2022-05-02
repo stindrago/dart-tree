@@ -56,14 +56,16 @@ is_command_installed clojure
 is_command_installed lein
 
 # Create a temp working directory
-if [[ -z "$DOWNLOAD_DIR" ]]; then
+if [[ -z "$DOWNLOAD_DIR" ]]
+then
     DOWNLOAD_DIR="$(mktemp -d)"
     echo "Creating a temp working directory '$DOWNLOAD_DIR'..."
     trap cleanup EXIT
 fi
 
 # Create program config directory if not present
-if [[ ! -d "$CONFIG_DIR" ]]; then
+if [[ ! -d "$CONFIG_DIR" ]]
+then
     echo "Just doing some rocket science stuff..."
     mkdir -p "$CONFIG_DIR"
 fi
