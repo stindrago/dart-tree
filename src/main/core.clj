@@ -40,7 +40,14 @@
    :version version
    :subcommands [{:command "new"
                   :description ["Create a new project tree from a skeleton."]
+                  :examples    ["dt new my-awesome-book \t - Create an empty project tree"
+                                "dt new book my-awesome-book \t - Create a new project tree from the `book' skeleton"]
                   :runs new-project}
+                 {:command "list"
+                  :description ["List skeletons."]
+                  :examples    ["dt list \t - List available skeletons."
+                                "dt list book \t - List the `book' skeleton tree."]
+                  :runs list-skel}
                  {:command "version"
                   :description ["Show version details."]
                   :runs show-version}]})
