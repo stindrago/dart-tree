@@ -7,7 +7,7 @@
 
   (:gen-class))
 
-(def version "0.1.1")
+(def version "0.2.0")
 (def skel-dir (str (fs/expand-home "~") "/" ".config/dart-cli/skel"))
 
 (defn new-project
