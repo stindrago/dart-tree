@@ -72,6 +72,10 @@ All notable changes to this project will be documented in this file. This change
 - Minor changes.
 - Updated documentation example.
 
+## [0.3.2] - 2022-05-03
+## Fixed
+- Bugs.
+
 [Unreleased]: #
 [0.0.1]: https://gitlab.com/stindrago/dart-cli/-/releases/v0.0.1 
 [0.0.2]: https://gitlab.com/stindrago/dart-cli/-/releases/v0.0.2
@@ -80,3 +84,4 @@ All notable changes to this project will be documented in this file. This change
 [0.2.0]: https://gitlab.com/stindrago/dart-cli/-/releases/v0.2.0
 [0.3.0]: https://gitlab.com/stindrago/dart-cli/-/releases/v0.3.0
 [0.3.1]: https://gitlab.com/stindrago/dart-cli/-/releases/v0.3.1
+[0.3.2]: https://gitlab.com/stindrago/dart-cli/-/releases/v0.3.2

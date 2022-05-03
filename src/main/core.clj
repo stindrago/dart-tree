@@ -5,7 +5,7 @@
             [main.tree :as t])
   (:gen-class))
 
-(def version "0.3.1")
+(def version "0.3.2")
 (def skel-dir (str (fs/expand-home "~") "/" ".config/dart-tree/skel"))
 (def config-file ".dartconfig")
 
