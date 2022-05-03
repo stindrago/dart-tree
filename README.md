@@ -3,26 +3,26 @@
 [java]: https://www.java.com
 [clojure]: https://clojure.org
 [leiningen]: https://leiningen.org
-[releases]: https://gitlab.com/stindrago/dart-cli/-/releases
+[releases]: https://gitlab.com/stindrago/dart-tree/-/releases
 
-# dart-cli
+# DART Tree
 
 ![](./resources/repo/demo.png)
 
 ## Introduction
 
-**dart-cli** is command line tool to generate a project tree from a skeleton (template). The project tree is made of files and directories.
+**dart-tree** is command line tool to generate a project tree from a skeleton (template). The project tree is made of files and directories.
 
 It is built as an utility software for the [D.A.R.T method][dart-method].
 
-The idea is to help you stay organized by providing an easy way to start a project. Whenever you start a new project the structures is more or less the same. Instead of doing this manually you can generate the project tree with **dart-cli**.
+The idea is to help you stay organized by providing an easy way to start a project. Whenever you start a new project the structures is more or less the same. Instead of doing this manually you can generate the project tree with **dart-tree**.
 
 ## Goals
 
 - [x] Generate projects from skeleton.
 - [x] Display help.
 - [x] List skeletons.
-- [ ] Manage namespaces (work, private, alter-ego-1...).
+- [x] Manage namespaces (work, private, alter-ego-1...).
 - [ ] Manage tags.
 - [ ] Automatic versioning.
 - [ ] Skeleton marketplace.
@@ -53,7 +53,7 @@ brew install leiningen
 Check [prerequisites](#Prerequisites) first.
 
 ``` shell
-bash < <(curl -s https://gitlab.com/stindrago/dart-cli/-/raw/main/install.sh)
+bash < <(curl -s https://gitlab.com/stindrago/dart-tree/-/raw/main/install.sh)
 ```
 
 Then you are ready to run
@@ -84,4 +84,4 @@ the-awesome-logo
 
 ## Customization
 
-All skeletons are stored in `~/.config/dart-cli/skel`. You can create a custom skeleton by creating a new project similar to the [example](#example).
+All skeletons are stored in `~/.config/dart-tree/skel`. You can create a custom skeleton by creating a new project similar to the [example](#example).
