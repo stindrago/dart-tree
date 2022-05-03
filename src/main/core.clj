@@ -36,7 +36,11 @@
       (run! #(println "-" %) (map fs/file-name (map str (fs/list-dir skel-dir)))))
     (t/pprint-ftree (t/popu-list (str skel-dir "/" (first (:_arguments args)))))))
 
-(defn show-version [args] (println version))
+
+(defn show-version
+  "Print the program version"
+  [args]
+  (println version))
 
 (def CONFIGURATION
   {:command "dart"
