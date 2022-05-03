@@ -7,6 +7,13 @@
 
 (def version "0.2.0")
 (def skel-dir (str (fs/expand-home "~") "/" ".config/dart-cli/skel"))
+(def config-file ".dartconfig")
+
+(defn create-config
+  "Create a config.edn file."
+  [file namespace]
+  (spit file {:uuid (nano-id 10)
+              :namespace namespace}))
 
 (defn new-project
   [params]
