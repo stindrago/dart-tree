@@ -46,12 +46,9 @@
 (defn list-skel
   "List skeletons from namespace."
   [args]
-  (println "list-skel" args)
   (let [argv (:_arguments args)
         ns (first argv)
         skel (second argv)]
-    (println "argv:" argv "ns:" ns "skel:" skel)
-    (println "count:" (count argv))
     (case (count argv)
       ;; Show available namespaces.
       0 (do (println "Listing available namespaces:")
