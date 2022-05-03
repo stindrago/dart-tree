@@ -77,7 +77,7 @@ tar xvf dart-tree-v${VERSION}.tar.gz
 cd dart-tree-v${VERSION}
 echo "Creating executable..."
 lein uberjar & # BUG
-sleep 10 # FIXME, workaround
+wait
 
 echo "Coping executable to '$INSTALL_DIR'..."
 if ! cp -rv $EXECUTABLE $INSTALL_DIR/dart-tree.jar
