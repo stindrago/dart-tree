@@ -2,9 +2,7 @@
   (:require [cli-matic.core :refer [run-cmd]]
             [babashka.fs :as fs]
             [nano-id.core :refer [nano-id]]
-            [main.tree :as t]
-            [clojure.java.shell :refer [sh]])
-
+            [main.tree :as t])
   (:gen-class))
 
 (def version "0.2.0")
