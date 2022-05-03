@@ -1,7 +1,6 @@
 ;; From https://github.com/ds2643/treecl
 
 (ns main.tree
-  (:gen-class)
   (:require [babashka.fs :as fs]))
 
 (defn popu-list
