@@ -16,15 +16,18 @@
               :namespace namespace}))
 
 (defn new-project
-  [params]
-  (let [args (:_arguments params)
-        first (first args)
-        second (second args)]
-    (case (count args)
+  "Create a project directory from skeleton."
+  [args]
+  (let [argv (:_arguments args)
+        first (first argv)
+        second (second argv)]
+    (case (count argv)
       1 (do (fs/create-dir first)
-            (println "Created default directory" first))
+            (create-config (str first "/" config-file) (:namespace args))
+            (println "Created default directory:" first))
       2 (do
-          (fs/copy-tree (str skel-dir "/" first) second)
+          (fs/copy-tree (str skel-dir "/" (:namespace args) "/" first) second)
+          (create-config (str second "/" config-file) (:namespace args))
           (println "Created default directory:" second
                    "from skeleton:" first)))))
 
