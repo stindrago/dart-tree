@@ -50,9 +50,24 @@ All notable changes to this project will be documented in this file. This change
 - CHANGELOG.md missing [0.1.1].
 - Minor bugs.
 
+## [0.3.0] - 2022-05-03
+### Added
+- Namespace support.
+- Better doc-strings.
+- Config file to support namespaces.
+
+### Changed
+- Refactored **list** command for better integration with namespaces.
+- Default skeletons directory to work with namespaces.
+- Renamed program from **dart-cli** to **dart-tree**.
+
+### Fixed
+- Old command name in help docs.
+
 [Unreleased]: #
 [0.0.1]: https://gitlab.com/stindrago/dart-cli/-/releases/v0.0.1 
 [0.0.2]: https://gitlab.com/stindrago/dart-cli/-/releases/v0.0.2
 [0.1.0]: https://gitlab.com/stindrago/dart-cli/-/releases/v0.1.0
 [0.1.1]: https://gitlab.com/stindrago/dart-cli/-/releases/v0.1.1
 [0.2.0]: https://gitlab.com/stindrago/dart-cli/-/releases/v0.2.0
+[0.3.0]: https://gitlab.com/stindrago/dart-cli/-/releases/v0.3.0
