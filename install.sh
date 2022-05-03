@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -eux
+set -eu
 
 VERSION=$(curl -sL "https://gitlab.com/stindrago/dart-tree/-/raw/main/VERSION")
 DEFAULT_INSTALL_DIR="/usr/local/bin"
