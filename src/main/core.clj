@@ -43,7 +43,7 @@
   (println version))
 
 (def CONFIGURATION
-  {:command "dart"
+  {:command "dt"
    :description ["A command line tool 🔨 for the D.A.R.T method to generate a project tree from a skeleton 📂 (template)."
                  "by stindrago <email@stindrago.com>"]
    :version version
