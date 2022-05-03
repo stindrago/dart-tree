@@ -59,17 +59,17 @@ bash < <(curl -s https://gitlab.com/stindrago/dart-tree/-/raw/main/install.sh)
 Then you are ready to run
 
 ```shell
-dt new book my-awesome-book
+dt new book awesome-book
 ```
 
 ## Example
 
 Imagine you are a graphic designer and one of your friends asks you to create a logo for his new website. Before starting to work you think about the required materials: icons, fonts, images, notes, ecc. All these files you gather must be stored in an organized fashion somewhere.
 
-The best thing to do is to start a new project called **the-awesome-logo**, structured like this.
+The best thing to do is to start a new project called **awesome-logo**, structured like this.
 
 ``` text
-the-awesome-logo
+awesome-logo
 ├── drawing.svg
 ├── README.md
 └── assets
@@ -81,6 +81,12 @@ the-awesome-logo
 - In **RADME.md** add details about the design: tasks, ideas, the delivery process, notes, ecc.
 - In **assets/input** add the images you may use as a reference, the color palet or the fonts.
 - In **assets/renders** add the logo exports as `.pdf` or `.png`.
+
+To create it run:
+
+```shell
+dt new graphic-design awesome-logo
+```
 
 ## Customization
 
