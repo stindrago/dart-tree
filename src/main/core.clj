@@ -40,13 +40,20 @@
    :version version
    :subcommands [{:command "new"
                   :description ["Create a new project tree from a skeleton."]
-                  :examples    ["dt new my-awesome-book \t - Create an empty project tree"
-                                "dt new book my-awesome-book \t - Create a new project tree from the `book' skeleton"]
+                  :examples    ["dt new my-awesome-book \t\t - Create a new empty project."
+                                "dt new book my-awesome-book \t\t - Create a new project tree from the `book' skeleton."
+                                "dt new book my-awesome-book -n work \t - Create a new project tree from the `book' skeleton for the `work' namespace."]
+                  :opts        [{:as "- Assign a namespace to the project."
+                                 :default "private"
+                                 :option "namespace"
+                                 :short "n"
+                                 :type :string}]
                   :runs new-project}
                  {:command "list"
-                  :description ["List skeletons."]
-                  :examples    ["dt list \t - List available skeletons."
-                                "dt list book \t - List the `book' skeleton tree."]
+                  :description ["List information about the skeletons and namespaces."]
+                  :examples    ["dt list \t\t - List available namespaces."
+                                "dt list work \t\t - List available skeletons for the `work' namespace."
+                                "dt list work book \t - List the `book' skeleton for the `work' namespace."]
                   :runs list-skel}
                  {:command "version"
                   :description ["Show version details."]
