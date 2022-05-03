@@ -84,9 +84,9 @@
    :version version
    :subcommands [{:command "new"
                   :description ["Create a new project tree from a skeleton."]
-                  :examples    ["dt new my-awesome-book \t\t - Create a new empty project."
-                                "dt new book my-awesome-book \t\t - Create a new project tree from the `book' skeleton."
-                                "dt new book my-awesome-book -n work \t - Create a new project tree from the `book' skeleton for the `work' namespace."]
+                  :examples    ["dt new awesome-book \t\t - Create a new empty project."
+                                "dt new book awesome-book \t\t - Create a new project tree from the `book' skeleton."
+                                "dt new book awesome-book -n work \t - Create a new project tree from the `book' skeleton for the `work' namespace."]
                   :opts        [{:as "- Assign a namespace to the project."
                                  :default "private"
                                  :option "namespace"
