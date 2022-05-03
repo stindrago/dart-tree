@@ -1,4 +1,4 @@
-(defproject dart-tree "0.3.2"
+(defproject dart-tree "0.3.3"
   :description "A command line tool 🛠 for the D.A.R.T method to generate a project tree from a skeleton 📂 (template)."
   :url "https://gitlab.com/stindrago/dart-cli"
   :license {:name "AGPL3"
