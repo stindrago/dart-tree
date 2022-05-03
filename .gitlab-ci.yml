@@ -14,7 +14,7 @@ prepare_job:
     - echo "Downloading required programs..."
     - lein uberjar
     - VERSION=$(cat VERSION)
-    - cp -v /builds/stindrago/dart-cli/target/uberjar/dart-cli-${VERSION}-standalone.jar /builds/stindrago/dart-cli/dart-cli.jar
+    - cp -v /builds/stindrago/dart-tree/target/uberjar/dart-tree-${VERSION}-standalone.jar /builds/stindrago/dart-tree/dart-tree.jar
     - echo "PRE_JOB_ID=$CI_JOB_ID" >> variables.env
     - echo "TAG=v$(cat VERSION)" >> variables.env # append to the variables.env file
     - echo "Build complete."
@@ -22,7 +22,7 @@ prepare_job:
     reports:
       dotenv: variables.env # Use artifacts:reports:dotenv to expose the variables to other jobs
     paths:
-      - /builds/stindrago/dart-cli/dart-cli.jar
+      - /builds/stindrago/dart-tree/dart-tree.jar
 
 release_job:
   stage: release
@@ -44,4 +44,4 @@ release_job:
     assets:
       links:
         - name: "Executable $CI_COMMIT_TAG (jar)"
-          url: "https://gitlab.com/stindrago/dart-cli/-/jobs/${PRE_JOB_ID}/artifacts/download"
+          url: "https://gitlab.com/stindrago/dart-tree/-/jobs/${PRE_JOB_ID}/artifacts/download"

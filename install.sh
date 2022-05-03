@@ -2,13 +2,13 @@
 
 set -e
 
-VERSION=$(curl -sL "https://gitlab.com/stindrago/dart-cli/-/raw/main/VERSION")
+VERSION=$(curl -sL "https://gitlab.com/stindrago/dart-tree/-/raw/main/VERSION")
 DEFAULT_INSTALL_DIR="/usr/local/bin"
 INSTALL_DIR="$DEFAULT_INSTALL_DIR"
-EXECUTABLE="./target/uberjar/dart-cli-${VERSION}-standalone.jar"
+EXECUTABLE="./target/uberjar/dart-tree-${VERSION}-standalone.jar"
 SKEL_DIR="./resources/skel"
-CONFIG_DIR="$HOME/.config/dart-cli"
-DOWNLOAD_URL="https://gitlab.com/stindrago/dart-cli/-/archive/v${VERSION}/dart-cli-v${VERSION}.tar.gz"
+CONFIG_DIR="$HOME/.config/dart-tree"
+DOWNLOAD_URL="https://gitlab.com/stindrago/dart-tree/-/archive/v${VERSION}/dart-tree-v${VERSION}.tar.gz"
 DOWNLOAD_DIR=""
 BASHRC_PATH=""
 CURRENT_DIR=$(pwd)
@@ -73,22 +73,22 @@ fi
 cd $DOWNLOAD_DIR
 echo "Downloading '$DOWNLOAD_URL' to '$DOWNLOAD_DIR'..."
 curl -O $DOWNLOAD_URL
-tar xvf dart-cli-v${VERSION}.tar.gz
-cd dart-cli-v${VERSION}
+tar xvf dart-tree-v${VERSION}.tar.gz
+cd dart-tree-v${VERSION}
 echo "Creating executable..."
 lein uberjar
 
 echo "Coping executable to '$INSTALL_DIR'..."
-if ! cp -rv $EXECUTABLE $INSTALL_DIR/dart-cli.jar
+if ! cp -rv $EXECUTABLE $INSTALL_DIR/dart-tree.jar
 then
     echo "Writing permissions are required to copy the executable to '$INSTALL_DIR', try again..."
-    sudo cp -rv $EXECUTABLE $INSTALL_DIR/dart-cli.jar
+    sudo cp -rv $EXECUTABLE $INSTALL_DIR/dart-tree.jar
 fi
 
 cp -rv $SKEL_DIR $CONFIG_DIR
 echo "Creating 'dart' alias..."
-echo "alias dt='java -jar ${INSTALL_DIR}/dart-cli.jar'" >> $BASHRC_PATH
+echo "alias dt='java -jar ${INSTALL_DIR}/dart-tree.jar'" >> $BASHRC_PATH
 echo
-echo "Successfully installed 'dart-cli' in $INSTALL_DIR".
+echo "Successfully installed 'dart-tree' in $INSTALL_DIR".
 echo "Reload your '.bashrc'. Run 'source ${HOME}/.bashrc' in your terminal."
 echo "Use 'dart --help' for details."
