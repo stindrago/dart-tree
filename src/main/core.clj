@@ -105,4 +105,4 @@
 
 (defn -main
   [& args]
-  (run-cmd *command-line-args* CONFIGURATION))
+  (run-cmd args CONFIGURATION))
