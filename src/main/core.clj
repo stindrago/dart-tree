@@ -31,14 +31,49 @@
           (println "Created default directory:" second
                    "from skeleton:" first)))))
 
-(defn list-skel
-  [args]
-  (if (= 0 (count (:_arguments args)))
-    (do
-      (println "Available skeletons:")
-      (run! #(println "-" %) (map fs/file-name (map str (fs/list-dir skel-dir)))))
-    (t/pprint-ftree (t/popu-list (str skel-dir "/" (first (:_arguments args)))))))
+(defn remove-unwanted
+  "Remove `/` from `str` to prevent unwanted behaviors."
+  [str]
+  (clojure.string/replace str #"/" ""))
 
+(defn ns-skel-dir?
+  "Check if the `ns` and `skel` directories exist."
+  ([skel]
+   (fs/directory? (str skel-dir "/" (remove-unwanted skel))))
+  ([ns skel]
+   (fs/directory? (str skel-dir "/" (remove-unwanted ns) "/" (remove-unwanted skel)))))
+
+(defn list-skel
+  "List skeletons from namespace."
+  [args]
+  (println "list-skel" args)
+  (let [argv (:_arguments args)
+        ns (first argv)
+        skel (second argv)]
+    (println "argv:" argv "ns:" ns "skel:" skel)
+    (println "count:" (count argv))
+    (case (count argv)
+      ;; Show available namespaces.
+      0 (do (println "Listing available namespaces:")
+            (run! #(println "-" %) (map fs/file-name (filter fs/directory? (map str (fs/list-dir (str skel-dir)))))))
+
+      ;; Show available skeletons from `ns`.
+      1 (if (ns-skel-dir? ns)
+          (do (println "Listing available skeletons for the" (clojure.string/upper-case ns) "namespace:")
+              (run! #(println "-" %) (map fs/file-name (filter fs/directory? (map str (fs/list-dir (str skel-dir "/" ns)))))))
+          (do
+            (println "Namespace non found, select one from the list:")
+            (run! #(println "-" %) (map fs/file-name (filter fs/directory? (map str (fs/list-dir skel-dir)))))))
+
+      ;; Show the `skel` from `ns`.
+      2 (if (ns-skel-dir? ns skel)
+          (do
+            (println "Listing" (clojure.string/upper-case skel)
+                     "skeleton for the" (clojure.string/upper-case ns) "namespace:")
+            (t/pprint-ftree (t/popu-list (str skel-dir "/" ns "/" skel)))))
+
+      ;; Anything else.
+      (println "Check syntax. See `dt list --help` for usage."))))
 
 (defn show-version
   "Print the program version"
