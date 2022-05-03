@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+set -eux
 
 VERSION=$(curl -sL "https://gitlab.com/stindrago/dart-tree/-/raw/main/VERSION")
 DEFAULT_INSTALL_DIR="/usr/local/bin"
@@ -76,7 +76,8 @@ curl -O $DOWNLOAD_URL
 tar xvf dart-tree-v${VERSION}.tar.gz
 cd dart-tree-v${VERSION}
 echo "Creating executable..."
-lein uberjar
+lein uberjar & # BUG
+sleep 10 # FIXME, workaround
 
 echo "Coping executable to '$INSTALL_DIR'..."
 if ! cp -rv $EXECUTABLE $INSTALL_DIR/dart-tree.jar
