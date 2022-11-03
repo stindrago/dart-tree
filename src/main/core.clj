@@ -80,7 +80,7 @@
 (def CONFIGURATION
   {:command "dt"
    :description ["A command line tool 🔨 for the D.A.R.T method to generate a project tree from a skeleton 📂 (template)."
-                 "by stindrago <email@stindrago.com>"]
+                 "by Costin Dragoi <costin@dragoi.me>"]
    :version version
    :subcommands [{:command "new"
                   :description ["Create a new project tree from a skeleton."]

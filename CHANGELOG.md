@@ -84,12 +84,12 @@ All notable changes to this project will be documented in this file. This change
 - Bugs.
 
 [Unreleased]: #
-[0.0.1]: https://gitlab.com/stindrago/dart-cli/-/releases/v0.0.1 
-[0.0.2]: https://gitlab.com/stindrago/dart-cli/-/releases/v0.0.2
-[0.1.0]: https://gitlab.com/stindrago/dart-cli/-/releases/v0.1.0
-[0.1.1]: https://gitlab.com/stindrago/dart-cli/-/releases/v0.1.1
-[0.2.0]: https://gitlab.com/stindrago/dart-cli/-/releases/v0.2.0
-[0.3.0]: https://gitlab.com/stindrago/dart-cli/-/releases/v0.3.0
-[0.3.1]: https://gitlab.com/stindrago/dart-cli/-/releases/v0.3.1
-[0.3.2]: https://gitlab.com/stindrago/dart-cli/-/releases/v0.3.2
-[0.3.3]: https://gitlab.com/stindrago/dart-cli/-/releases/v0.3.3
+[0.0.1]: https://git.dragoi.me/costin/dart-cli/-/releases/v0.0.1 
+[0.0.2]: https://git.dragoi.me/costin/dart-cli/-/releases/v0.0.2
+[0.1.0]: https://git.dragoi.me/costin/dart-cli/-/releases/v0.1.0
+[0.1.1]: https://git.dragoi.me/costin/dart-cli/-/releases/v0.1.1
+[0.2.0]: https://git.dragoi.me/costin/dart-cli/-/releases/v0.2.0
+[0.3.0]: https://git.dragoi.me/costin/dart-cli/-/releases/v0.3.0
+[0.3.1]: https://git.dragoi.me/costin/dart-cli/-/releases/v0.3.1
+[0.3.2]: https://git.dragoi.me/costin/dart-cli/-/releases/v0.3.2
+[0.3.3]: https://git.dragoi.me/costin/dart-cli/-/releases/v0.3.3

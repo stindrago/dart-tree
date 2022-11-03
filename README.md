@@ -1,9 +1,9 @@
-[dart-method]: https://stindrago.com/blog/#
+[dart-method]: https://blog.dragoi.me/
 [inkscape]: https://inkscape.org
 [java]: https://www.java.com
 [clojure]: https://clojure.org
 [leiningen]: https://leiningen.org
-[releases]: https://gitlab.com/stindrago/dart-tree/-/releases
+[releases]: https://git.dragoi.me/costin/dart-tree/-/releases
 
 # DART Tree
 
@@ -53,7 +53,7 @@ brew install leiningen
 Check [prerequisites](#Prerequisites) first.
 
 ``` shell
-bash < <(curl -s https://gitlab.com/stindrago/dart-tree/-/raw/main/install.sh)
+bash < <(curl -s https://git.dragoi.me/costin/dart-tree/-/raw/main/install.sh)
 ```
 
 Then you are ready to run

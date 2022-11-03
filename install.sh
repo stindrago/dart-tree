@@ -2,13 +2,13 @@
 
 set -eu
 
-VERSION=$(curl -sL "https://gitlab.com/stindrago/dart-tree/-/raw/main/VERSION")
+VERSION=$(curl -sL "https://git.dragoi.me/costin/dart-tree/-/raw/main/VERSION")
 DEFAULT_INSTALL_DIR="/usr/local/bin"
 INSTALL_DIR="$DEFAULT_INSTALL_DIR"
 EXECUTABLE="./target/uberjar/dart-tree-${VERSION}-standalone.jar"
 SKEL_DIR="./resources/skel"
 CONFIG_DIR="$HOME/.config/dart-tree"
-DOWNLOAD_URL="https://gitlab.com/stindrago/dart-tree/-/archive/v${VERSION}/dart-tree-v${VERSION}.tar.gz"
+DOWNLOAD_URL="https://git.dragoi.me/costin/dart-tree/-/archive/v${VERSION}/dart-tree-v${VERSION}.tar.gz"
 DOWNLOAD_DIR=""
 BASHRC_PATH=""
 CURRENT_DIR=$(pwd)

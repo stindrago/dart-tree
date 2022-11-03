@@ -1,8 +1,8 @@
 (defproject dart-tree "0.3.3"
   :description "A command line tool 🛠 for the D.A.R.T method to generate a project tree from a skeleton 📂 (template)."
-  :url "https://gitlab.com/stindrago/dart-cli"
+  :url "https://git.dragoi.me/costin/dart-cli"
   :license {:name "AGPL3"
-            :url "https://gitlab.com/stindrago/dart-cli/-/raw/main/LICENSE"}
+            :url "https://git.dragoi.me/costin/dart-cli/-/raw/main/LICENSE"}
   :dependencies [[org.clojure/clojure "1.10.3"]
                  [cli-matic "0.5.3"]
                  [babashka "0.8.1"]
