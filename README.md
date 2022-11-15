@@ -51,7 +51,7 @@ brew install leiningen
 Check [prerequisites](#Prerequisites) first.
 
 ``` shell
-bash < <(curl -s https://git.dragoi.me/costin/dart-tree/-/raw/main/install.sh)
+bash < <(curl -s https://git.dragoi.me/costin/dart-tree/raw/branch/main/install.sh)
 ```
 
 Then you are ready to run
