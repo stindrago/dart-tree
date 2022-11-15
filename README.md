@@ -7,8 +7,6 @@
 
 # DART Tree
 
-![](./resources/repo/demo.png)
-
 ## Introduction
 
 **dart-tree** is command line tool to generate a project tree from a skeleton (template). The project tree is made of files and directories.
