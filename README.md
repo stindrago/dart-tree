@@ -15,16 +15,12 @@ It is built as an utility software for the [D.A.R.T method][dart-method].
 
 The idea is to help you stay organized by providing an easy way to start a project. Whenever you start a new project the structures is more or less the same. Instead of doing this manually you can generate the project tree with **dart-tree**.
 
-## Goals
+## Features
 
-- [x] Generate projects from skeleton.
-- [x] Display help.
-- [x] List skeletons.
-- [x] Manage namespaces (work, private, alter-ego-1...).
-- [ ] Manage tags.
-- [ ] Automatic versioning.
-- [ ] Skeleton marketplace.
-- [ ] GUI.
+- Generate projects from skeleton.
+- Display help.
+- List skeletons.
+- Manage namespaces (work, private, alter-ego-1...).
 
 ## Prerequisites
 
